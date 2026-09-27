@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Brand - Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f9;
+        }
+
+        header {
+            background-color: #FF788D;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            padding-left: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f8f8f8;
+        }
+
+        .product-menu {
+            border: none;
+            background-color: #FF788D;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product-menu:hover {
+            background-color: #f8f8f8;
+            color: #FF788D;
+        }
+
+        /* Hero Banner with Sale Announcement */
+        .hero-banner {
+            background: linear-gradient(135deg, #FF788D, #ffb3b3);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 42px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-banner p {
+            font-size: 20px;
+            margin: 0 0 25px 0;
+        }
+
+        .sale-badge {
+            background-color: #fff;
+            color: #d93850;
+            padding: 8px 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .shop-now-btn {
+            background-color: #333;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #555;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* Best Sellers Grid */
+        .products-container {
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            width: 280px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-bestseller {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #FF788D;
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 15px 0 5px 0;
+            color: #333;
+        }
+
+        .card .stars {
+            color: #ffb400;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .sale-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d93850;
+        }
+
+        .btn {
+            background-color: #FF788D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #e06377;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: #fff0f3;
+            padding: 50px 20px;
+        }
+
+        .reviews-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .review-card .author {
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .review-card .stars {
+            color: #ffb400;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="candy logo.avif" alt="Candy Brand Logo">
+        </div>
+        <span style="color: #1f1818; font-weight: bold; font-size: 24px; margin-left: 10px;">Candy Brand</span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <select name="product" id="product" class="product-menu" onchange="if (this.value) window.location.href = this.value;">
+                        <option value="index.html" selected>Products</option>
+                        <option value="products.html">All Products</option>
+                        <option value="chocolate.html">Chocolate</option>
+                        <option value="gummies.html">Gummies</option>
+                        <option value="lollipops.html">Lollipops</option>
+                    </select>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sweet Sale Hero Section -->
+    <section class="hero-banner">
+        <span class="sale-badge">SWEET WEEKEND SALE 🍭</span>
+        <h1>Up to 30% Off Sweet Treats!</h1>
+        <p>Treat yourself to our handcrafted chocolates, juicy gummies, and rainbow lollipops.</p>
+        <a href="products.html" class="shop-now-btn">Shop All Products</a>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <h2 class="section-title">🔥 Best Sellers</h2>
+    <p class="section-subtitle">Our customer favorites, loved by sweet tooths everywhere.</p>
+
+    <main class="products-container">
+        <!-- Best Seller 1 -->
+        <div class="card">
+            <span class="badge-bestseller">#1 Chocolate</span>
+            <img src="milk-chocolate.jpg" alt="Classic Milk Chocolate">
+            <h3>Classic Milk Chocolate</h3>
+            <div class="stars">★★★★★</div>
+            <p>Creamy, sweet, and melts in your mouth.</p>
+            <div class="price-container">
+                <span class="old-price">$4.99</span>
+                <span class="sale-price">$3.99</span>
+            </div>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <!-- Best Seller 2 -->
+        <div class="card">
+            <span class="badge-bestseller">#1 Gummies</span>
+            <img src="gummy-bears.jpg" alt="Fruity Gummy Bears">
+            <h3>Fruity Gummy Bears</h3>
+            <div class="stars">★★★★★</div>
+            <p>Soft, chewy, and packed with real fruit flavor.</p>
+            <div class="price-container">
+                <span class="old-price">$3.99</span>
+                <span class="sale-price">$2.99</span>
+            </div>
+            <button class="btn">Add to Cart</button>
+        </div>
+
+        <!-- Best Seller 3 -->
+        <div class="card">
+            <span class="badge-bestseller">#1 Lollipops</span>
+            <img src="swirl-lollipop.jpg" alt="Giant Swirl Lollipop">
+            <h3>Giant Swirl Lollipop</h3>
+            <div class="stars">★★★★★</div>
+            <p>Classic multi-color fruity swirl hard candy.</p>
+            <div class="price-container">
+                <span class="old-price">$2.49</span>
+                <span class="sale-price">$1.99</span>
+            </div>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </main>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section">
+        <h2 class="section-title">💬 What Our Customers Say</h2>
+        <p class="section-subtitle">Read real reviews from candy lovers!</p>
+
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"The milk chocolate bar is absolutely divine. Super smooth and delicious. Fast delivery too!"</p>
+                <span class="author">— Sarah M.</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"My kids loved the gummy bears! They are so fresh and juicy. Will definitely order again."</p>
+                <span class="author">— David K.</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"The swirl lollipops look amazing and taste even better. Great quality candies!"</p>
+                <span class="author">— Emily R.</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

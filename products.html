@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Brand - All Products</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcf8f8;
+        }
+
+        header {
+            background-color: #FF788D;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            padding-left: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f8f8f8;
+        }
+
+        .product-menu {
+            border: none;
+            background-color: #FF788D;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product-menu:hover {
+            background-color: #f8f8f8;
+            color: #FF788D;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 36px;
+        }
+
+        /* Category Filter Buttons */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .cat-btn {
+            background-color: #fff;
+            border: 2px solid #FF788D;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn:hover {
+            background-color: #FF788D;
+            color: white;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+            font-size: 28px;
+            position: relative;
+        }
+
+        .products-container {
+            max-width: 1100px;
+            margin: 20px auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF788D;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #FF788D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e06377;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="candy logo.avif" alt="Candy Brand Logo">
+        </div>
+        <span style="color: #1f1818; font-weight: bold; font-size: 24px; margin-left: 10px;">Candy Brand</span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <select name="product" id="product" class="product-menu" onchange="if (this.value) window.location.href = this.value;">
+                        <option value="products.html" selected>Products</option>
+                        <option value="chocolate.html">Chocolate</option>
+                        <option value="gummies.html">Gummies</option>
+                        <option value="lollipops.html">Lollipops</option>
+                    </select>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>All Products Catalog</h1>
+        <p>Explore our entire collection of sweet treats!</p>
+    </div>
+
+    <!-- Quick Navigation to Category Pages -->
+    <div class="category-nav">
+        <a href="chocolate.html" class="cat-btn">Chocolate Page</a>
+        <a href="gummies.html" class="cat-btn">Gummies Page</a>
+        <a href="lollipops.html" class="cat-btn">Lollipops Page</a>
+    </div>
+
+    <!-- Chocolates Category Section -->
+    <h2 class="section-title">Chocolates</h2>
+    <main class="products-container">
+        <div class="card">
+            <img src="dark-chocolate.jpg" alt="Dark Chocolate">
+            <h3>70% Dark Chocolate</h3>
+            <p>Rich, bold cocoa with a smooth finish.</p>
+            <div class="price">$4.99</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="milk-chocolate.jpg" alt="Milk Chocolate">
+            <h3>Classic Milk Chocolate</h3>
+            <p>Creamy, sweet, and melts in your mouth.</p>
+            <div class="price">$3.99</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="hazelnut-chocolate.jpg" alt="Hazelnut Bar">
+            <h3>Hazelnut Crunch</h3>
+            <p>Packed with roasted hazelnuts for extra crunch.</p>
+            <div class="price">$5.49</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </main>
+
+    <!-- Gummies Category Section -->
+    <h2 class="section-title">Gummies</h2>
+    <main class="products-container">
+        <div class="card">
+            <img src="gummy-bears.jpg" alt="Gummy Bears">
+            <h3>Fruity Gummy Bears</h3>
+            <p>Assorted fruit flavors in every pack.</p>
+            <div class="price">$2.99</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="sour-worms.jpg" alt="Sour Worms">
+            <h3>Sour Worms</h3>
+            <p>Tangy sour coating with sweet gummy center.</p>
+            <div class="price">$3.29</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="peach-rings.jpg" alt="Peach Rings">
+            <h3>Peach Rings</h3>
+            <p>Sweet peach-flavored chewy rings.</p>
+            <div class="price">$2.99</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </main>
+
+    <!-- Lollipops Category Section -->
+    <h2 class="section-title">Lollipops</h2>
+    <main class="products-container">
+        <div class="card">
+            <img src="swirl-lollipop.jpg" alt="Swirl Lollipop">
+            <h3>Giant Swirl Lollipop</h3>
+            <p>Classic multi-color fruity swirl candy.</p>
+            <div class="price">$1.99</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="cherry-pop.jpg" alt="Cherry Pop">
+            <h3>Cherry Blast Pop</h3>
+            <p>Intense cherry flavor with a hard candy shell.</p>
+            <div class="price">$1.49</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="bubble-pop.jpg" alt="Bubblegum Pop">
+            <h3>Bubblegum Center Pop</h3>
+            <p>Hard lollipop with a chewy bubblegum core.</p>
+            <div class="price">$1.79</div>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </main>
+
+</body>
+
+</html>

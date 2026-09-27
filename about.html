@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Brand - About Us</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f9;
+        }
+
+        header {
+            background-color: #FF788D;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            padding-left: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f8f8f8;
+        }
+
+        .product-menu {
+            border: none;
+            background-color: #FF788D;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product-menu:hover {
+            background-color: #f8f8f8;
+            color: #FF788D;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #FF788D, #ffb3b3);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 38px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-banner p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Container Styling */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* How It's Made / Safety Grid */
+        .safety-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .safety-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .safety-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .safety-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .safety-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            margin-bottom: 50px;
+        }
+
+        details {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            cursor: pointer;
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            outline: none;
+        }
+
+        details p {
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="candy logo.avif" alt="Candy Brand Logo">
+        </div>
+        <span style="color: #1f1818; font-weight: bold; font-size: 24px; margin-left: 10px;">Candy Brand</span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <select name="product" id="product" class="product-menu" onchange="if (this.value) window.location.href = this.value;">
+                        <option value="about.html" selected>Products</option>
+                        <option value="products.html">All Products</option>
+                        <option value="chocolate.html">Chocolate</option>
+                        <option value="gummies.html">Gummies</option>
+                        <option value="lollipops.html">Lollipops</option>
+                    </select>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <h1>About Candy Brand</h1>
+        <p>Crafting delicious, high-quality sweets with care and safety in mind.</p>
+    </section>
+
+    <div class="content-container">
+
+        <!-- Safety & Quality Section -->
+        <h2 class="section-title">How Our Candies Are Made</h2>
+        <div class="safety-grid">
+            <div class="safety-card">
+                <div class="icon">🛡️</div>
+                <h3>100% Child-Safe</h3>
+                <p>We use non-toxic, food-grade ingredients that strictly adhere to health and safety standards.</p>
+            </div>
+
+            <div class="safety-card">
+                <div class="icon">🍎</div>
+                <h3>Natural Fruit Juices</h3>
+                <p>Our gummies and lollipops are sweetened using real fruit extracts rather than harsh synthetic additives.</p>
+            </div>
+
+            <div class="safety-card">
+                <div class="icon">🧼</div>
+                <h3>Clean Environment</h3>
+                <p>All products are prepared in sanitized facilities to guarantee purity and safety for every bite.</p>
+            </div>
+        </div>
+
+        <!-- FAQs Section -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Are your products safe for young children?</summary>
+                <p>Yes! Safety is our top priority. Our ingredients are thoroughly tested and sourced from certified suppliers to ensure they are safe for kids of all ages.</p>
+            </details>
+
+            <details>
+                <summary>Do your candies contain artificial dyes or chemicals?</summary>
+                <p>We minimize synthetic ingredients wherever possible by using natural colors derived from fruits and vegetables, such as beet juice and turmeric.</p>
+            </details>
+
+            <details>
+                <summary>Are any of your products nut-free or allergen-friendly?</summary>
+                <p>Many of our gummies and lollipops are made in nut-free facilities. Please check individual product packaging for specific allergen information.</p>
+            </details>
+
+            <details>
+                <summary>How should I store these candies at home?</summary>
+                <p>Keep your sweets in a cool, dry place away from direct sunlight to preserve their freshness, flavor, and texture.</p>
+            </details>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

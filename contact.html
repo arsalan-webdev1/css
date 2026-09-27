@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Brand - Contact Us</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f9;
+        }
+
+        header {
+            background-color: #FF788D;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            padding-left: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f8f8f8;
+        }
+
+        .product-menu {
+            border: none;
+            background-color: #FF788D;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product-menu:hover {
+            background-color: #f8f8f8;
+            color: #FF788D;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #FF788D, #ffb3b3);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 38px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-banner p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .contact-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info, .contact-form {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h4 {
+            margin: 0 0 5px 0;
+            color: #FF788D;
+            font-size: 16px;
+        }
+
+        .info-item p {
+            margin: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF788D;
+        }
+
+        .submit-btn {
+            background-color: #FF788D;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e06377;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="candy logo.avif" alt="Candy Brand Logo">
+        </div>
+        <span style="color: #1f1818; font-weight: bold; font-size: 24px; margin-left: 10px;">Candy Brand</span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <select name="product" id="product" class="product-menu" onchange="if (this.value) window.location.href = this.value;">
+                        <option value="contact.html" selected>Products</option>
+                        <option value="products.html">All Products</option>
+                        <option value="chocolate.html">Chocolate</option>
+                        <option value="gummies.html">Gummies</option>
+                        <option value="lollipops.html">Lollipops</option>
+                    </select>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <h1>Get in Touch</h1>
+        <p>Have questions, feedback, or custom orders? We'd love to hear from you!</p>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <main class="contact-container">
+        
+        <!-- Store Information -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            
+            <div class="info-item">
+                <h4>📍 Address</h4>
+                <p>Badin Road, Ansari Sugar Mills, Matli, Pakistan</p>
+            </div>
+
+            <div class="info-item">
+                <h4>📞 Phone Number</h4>
+                <p>+92 3273454681</p>
+            </div>
+
+            <div class="info-item">
+                <h4>✉️ Email Address</h4>
+                <p>web1devlper1@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <h4>⏰ Business Hours</h4>
+                <p>Monday – Saturday: 9:00 AM – 8:00 PM<br>Sunday: Closed</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="e.g., Order Inquiry" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
