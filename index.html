@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candy Brand - Home</title>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,11 +20,17 @@
 
         header {
             background-color: #FF788D;
-            padding: 10px 20px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo-container {
             display: flex;
             align-items: center;
         }
-        
 
         .logo img {
             height: 50px;
@@ -29,6 +39,25 @@
             display: block;
         }
 
+        .logo-text {
+            color: #1f1818;
+            font-weight: bold;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        /* Hamburger Toggle Button (Hidden on desktop) */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: #1f1818;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        /* Desktop Navigation */
         nav {
             margin-left: auto;
         }
@@ -39,10 +68,7 @@
             padding: 0;
             display: flex;
             align-items: center;
-        }
-
-        nav ul li {
-            padding-left: 40px;
+            gap: 20px;
         }
 
         nav ul li a {
@@ -61,6 +87,8 @@
             color: black;
             font-weight: bold;
             cursor: pointer;
+            padding: 5px;
+            font-size: 16px;
         }
 
         .product-menu:hover {
@@ -68,7 +96,39 @@
             color: #FF788D;
         }
 
-        /* Hero Banner with Sale Announcement */
+        /* Search Styles */
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input.search {
+            border: 1px solid #f3dce1;
+            border-radius: 999px;
+            padding: 8px 14px 8px 38px;
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 180px;
+            outline: none;
+            box-sizing: border-box;
+            transition: width 0.3s;
+        }
+
+        input.search:focus {
+            border-color: #e06377;
+            box-shadow: 0 0 0 2px rgba(224, 99, 119, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            font-size: 20px;
+            color: #666;
+            pointer-events: none;
+        }
+
+        /* Hero Banner */
         .hero-banner {
             background: linear-gradient(135deg, #FF788D, #ffb3b3);
             color: white;
@@ -77,12 +137,12 @@
         }
 
         .hero-banner h1 {
-            font-size: 42px;
+            font-size: clamp(28px, 5vw, 42px);
             margin: 0 0 10px 0;
         }
 
         .hero-banner p {
-            font-size: 20px;
+            font-size: clamp(16px, 3vw, 20px);
             margin: 0 0 25px 0;
         }
 
@@ -92,7 +152,8 @@
             padding: 8px 16px;
             font-weight: bold;
             border-radius: 20px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 20px;
         }
 
@@ -104,6 +165,10 @@
             font-weight: bold;
             border-radius: 25px;
             font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
             transition: background 0.3s;
         }
 
@@ -114,7 +179,7 @@
         /* Section Titles */
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: clamp(24px, 4vw, 32px);
             color: #333;
             margin-top: 50px;
             margin-bottom: 10px;
@@ -124,27 +189,32 @@
             text-align: center;
             color: #777;
             margin-bottom: 30px;
+            padding: 0 15px;
         }
 
-        /* Best Sellers Grid */
+        /* Best Sellers - CSS Grid Layout */
         .products-container {
             max-width: 1100px;
             margin: 0 auto 50px auto;
             padding: 0 20px;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-items: center;
         }
 
         .card {
             background: white;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-            width: 280px;
+            width: 100%;
+            max-width: 320px;
             padding: 20px;
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .badge-bestseller {
@@ -217,7 +287,7 @@
             background-color: #e06377;
         }
 
-        /* Reviews Section */
+        /* Reviews Section - CSS Grid Layout */
         .reviews-section {
             background-color: #fff0f3;
             padding: 50px 20px;
@@ -226,19 +296,23 @@
         .reviews-container {
             max-width: 1000px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-items: center;
         }
 
         .review-card {
             background: white;
             border-radius: 10px;
             padding: 25px;
-            width: 280px;
+            width: 100%;
+            max-width: 320px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .review-card .author {
@@ -259,19 +333,92 @@
             line-height: 1.5;
             margin: 0;
         }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .cookie-icon {
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        /* Mobile Styles (Screen width <= 768px) */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #FF788D;
+                padding: 15px 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+
+            .search-item {
+                width: 100%;
+            }
+
+            input.search {
+                width: 100%;
+            }
+
+            .product-menu {
+                width: 100%;
+                text-align: left;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="logo">
-            <img src="candy logo.avif" alt="Candy Brand Logo">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="candy logo.avif" alt="Candy Brand Logo">
+            </div>
+            <span class="logo-text">Candy Brand</span>
         </div>
-        <span style="color: #1f1818; font-weight: bold; font-size: 24px; margin-left: 10px;">Candy Brand</span>
 
-        <nav>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <nav id="nav-menu">
             <ul>
+                <li class="search-item">
+                    <div class="search-wrapper">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" class="search" placeholder="Search products...">
+                    </div>
+                </li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li>
@@ -290,10 +437,10 @@
 
     <!-- Sweet Sale Hero Section -->
     <section class="hero-banner">
-        <span class="sale-badge">WEEKEND SALE 🍭</span>
+        <span class="sale-badge"><span class="material-symbols-outlined cookie-icon">cookie</span>WEEKEND SALE</span>
         <h1>Up to 30% Off Sweet Treats!</h1>
         <p>Treat yourself to our handcrafted chocolates, juicy gummies, and rainbow lollipops.</p>
-        <a href="products.html" class="shop-now-btn">Shop All Products</a>
+        <a href="products.html" class="shop-now-btn">Shop All Products <span class="material-symbols-outlined cookie-icon">cookie</span></a>
     </section>
 
     <!-- Best Sellers Section -->
@@ -351,25 +498,39 @@
 
         <div class="reviews-container">
             <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"The milk chocolate bar is absolutely divine. Super smooth and delicious. Fast delivery too!"</p>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"The milk chocolate bar is absolutely divine. Super smooth and delicious. Fast delivery too!"</p>
+                </div>
                 <span class="author">— Sarah M.</span>
             </div>
 
             <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"My kids loved the gummy bears! They are so fresh and juicy. Will definitely order again."</p>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"My kids loved the gummy bears! They are so fresh and juicy. Will definitely order again."</p>
+                </div>
                 <span class="author">— David K.</span>
             </div>
 
             <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"The swirl lollipops look amazing and taste even better. Great quality candies!"</p>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"The swirl lollipops look amazing and taste even better. Great quality candies!"</p>
+                </div>
                 <span class="author">— Emily R.</span>
             </div>
         </div>
     </section>
 
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
