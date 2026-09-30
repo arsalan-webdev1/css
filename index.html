@@ -18,6 +18,63 @@
             background-color: #fff9f9;
         }
 
+        /* ---------------------------------- */
+        /* PRELOADER STYLES                   */
+        /* ---------------------------------- */
+        .preloader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fff9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: hidePreloader 0.5s ease-out 2.5s forwards;
+        }
+
+        .preloader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3dce1;
+            border-top: 6px solid #FF788D;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .preloader-text {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #FF788D;
+            font-size: 18px;
+            letter-spacing: 1px;
+            animation: pulse 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes hidePreloader {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+        /* ---------------------------------- */
+        /* HEADER STYLES                      */
+        /* ---------------------------------- */
         header {
             background-color: #FF788D;
             padding: 15px 20px;
@@ -128,22 +185,28 @@
             pointer-events: none;
         }
 
-        /* Hero Banner */
+        /* ---------------------------------- */
+        /* HERO BANNER WITH BACKGROUND IMAGE   */
+        /* ---------------------------------- */
         .hero-banner {
-            background: linear-gradient(135deg, #FF788D, #ffb3b3);
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('hero-bg.jpg') no-repeat center center/cover;
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 2.6s forwards;
         }
 
         .hero-banner h1 {
             font-size: clamp(28px, 5vw, 42px);
             margin: 0 0 10px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-banner p {
             font-size: clamp(16px, 3vw, 20px);
             margin: 0 0 25px 0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .sale-badge {
@@ -155,10 +218,11 @@
             display: inline-flex;
             align-items: center;
             margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
 
         .shop-now-btn {
-            background-color: #333;
+            background-color: #FF788D;
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -169,11 +233,13 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .shop-now-btn:hover {
-            background-color: #555;
+            background-color: #e06377;
+            transform: translateY(-2px);
         }
 
         /* Section Titles */
@@ -394,10 +460,54 @@
                 padding: 0;
             }
         }
+
+        /* ---------------------------------- */
+        /* CONTENT ANIMATIONS                 */
+        /* ---------------------------------- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Banner Inner Elements Staggered Fade */
+        .hero-banner .sale-badge,
+        .hero-banner h1,
+        .hero-banner p,
+        .hero-banner .shop-now-btn {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero-banner .sale-badge { animation-delay: 2.8s; }
+        .hero-banner h1         { animation-delay: 3.0s; }
+        .hero-banner p          { animation-delay: 3.2s; }
+        .hero-banner .shop-now-btn { animation-delay: 3.4s; }
+
+        /* Best Seller Cards Animations */
+        .products-container .card {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .products-container .card:nth-child(1) { animation-delay: 3.5s; }
+        .products-container .card:nth-child(2) { animation-delay: 3.7s; }
+        .products-container .card:nth-child(3) { animation-delay: 3.9s; }
     </style>
 </head>
 
 <body>
+
+    <!-- Fullscreen Preloader Overlay -->
+    <div class="preloader-overlay">
+        <div class="preloader-spinner"></div>
+        <div class="preloader-text">Loading Sweet Treats...</div>
+    </div>
 
     <header>
         <div class="logo-container">
@@ -435,7 +545,7 @@
         </nav>
     </header>
 
-    <!-- Sweet Sale Hero Section -->
+    <!-- Sweet Sale Hero Section with Background Image -->
     <section class="hero-banner">
         <span class="sale-badge"><span class="material-symbols-outlined cookie-icon">cookie</span>WEEKEND SALE</span>
         <h1>Up to 30% Off Sweet Treats!</h1>
